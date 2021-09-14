@@ -15,7 +15,7 @@ const NoteState = (props) => {
             headers: {
                 "Content-Type": "application/json",
                 "auth-token":
-                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjEzNzMwYjE2Yjg1MTEwNjUyMmQyM2RlIn0sImlhdCI6MTYzMTAxMjM3Nn0.3YFgFngVfNXrLxMm-WLSCn3MrzJQNLVDtr6lghzdOM4",
+                    localStorage.getItem('token'),
             },
         });
         const json = await response.json();
@@ -31,7 +31,7 @@ const NoteState = (props) => {
             headers: {
                 "Content-Type": "application/json",
                 "auth-token":
-                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjEzNzMwYjE2Yjg1MTEwNjUyMmQyM2RlIn0sImlhdCI6MTYzMTAxMjM3Nn0.3YFgFngVfNXrLxMm-WLSCn3MrzJQNLVDtr6lghzdOM4",
+                    localStorage.getItem('token'),
             },
             body: JSON.stringify({ title, description, tag }),
         });
@@ -48,10 +48,11 @@ const NoteState = (props) => {
             headers: {
                 "Content-Type": "application/json",
                 "auth-token":
-                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjEzNzMwYjE2Yjg1MTEwNjUyMmQyM2RlIn0sImlhdCI6MTYzMTAxMjM3Nn0.3YFgFngVfNXrLxMm-WLSCn3MrzJQNLVDtr6lghzdOM4",
+                    localStorage.getItem('token'),
             },
         });
         const json = response.json();
+        console.log(json);
 
         const newNotes = notes.filter((note) => {
             return note._id !== id;
@@ -67,11 +68,13 @@ const NoteState = (props) => {
             headers: {
                 "Content-Type": "application/json",
                 "auth-token":
-                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjEzNzMwYjE2Yjg1MTEwNjUyMmQyM2RlIn0sImlhdCI6MTYzMTAxMjM3Nn0.3YFgFngVfNXrLxMm-WLSCn3MrzJQNLVDtr6lghzdOM4",
+                    localStorage.getItem('token'),
             },
             body: JSON.stringify({ title, description, tag }),
         });
         const json = await response.json();
+        console.log(json);
+
 
         let newNotes = JSON.parse(JSON.stringify(notes));
 
